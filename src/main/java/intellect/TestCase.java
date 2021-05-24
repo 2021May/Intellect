@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import driverScript.Driver;
 import pages.ResultPage;
-import pages.SearchPage; 
+import pages.SearchPage;  
 
 public class TestCase extends Driver{
 	
