@@ -66,30 +66,7 @@ public class GenericActions extends Reports {
 		} 
 	}
 
-	public String getText(WebElement ele) {	
-		String bReturn = "";
-		try {
-			bReturn = ele.getText();
-		} catch (WebDriverException e) {
-			reportStep("The element: "+ele+" could not be found.", "fail");
-		}
-		return bReturn;
-	}
-
-	public void verifySelected(WebElement ele) {
-		try {
-			if(ele.isSelected()) {
-				reportStep("The element "+ele+" is selected","pass");
-			} else {
-				reportStep("The element "+ele+" is not selected","fail");
-			}
-		} catch (WebDriverException e) {
-			reportStep("WebDriverException : "+e.getMessage(), "fail");
-		}
-	}
-
 	
-
 	@Override
 	public long takeSnap() {
 		long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L; 

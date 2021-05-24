@@ -19,12 +19,26 @@ public class SearchPage extends Driver {
 	WebElement flights;
 	public SearchPage clickFlights() {
 		try {
-			driver.findElement(By.xpath("//div[@class='headerOuter']")).click();
-			click(flights);
+			Thread.sleep(2000); 
+			WebElement popup=driver.findElement(By.xpath("//p[text()='Login/Signup for Best Prices']//parent::div"));
+			if(popup.isDisplayed()) {
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("//div[@class='headerOuter']")).click();
+				click(flights);
+			}else {
+				driver.findElement(By.xpath("//div[@class='headerOuter']")).click();
+				click(flights);
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			if(e.getMessage().contains("NoSuchElementException")) {
 			driver.findElement(By.xpath("//div[@class='headerOuter']")).click();
+			click(flights);
 			e.printStackTrace();
+		}else {
+			driver.findElement(By.xpath("//div[@class='headerOuter']")).click();
+			click(flights);
+		}
 		}
 		return this;
 	}
