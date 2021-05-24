@@ -25,7 +25,7 @@ public class SearchPage extends Driver {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			driver.findElement(By.xpath("//div[@class='headerOuter']")).click();
-			e.printStackTrace();
+			e.printStackTrace(); 
 		} 
 		return this;
 	}
