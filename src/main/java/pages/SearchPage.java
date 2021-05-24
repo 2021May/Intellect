@@ -21,12 +21,11 @@ public class SearchPage extends Driver {
 		try {
 			driver.findElement(By.xpath("//div[@class='headerOuter']")).click();
 			click(flights);
-			return this;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			driver.findElement(By.xpath("//div[@class='headerOuter']")).click();
-			e.printStackTrace(); 
-		} 
+			e.printStackTrace();
+		}
 		return this;
 	}
 	
